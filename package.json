@@ -1,0 +1,15 @@
+{
+  "name": "vaga-estagio-melhor-plano",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "author": "Matheus Godinho <matheus@melhorplano.net>",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2"
+  }
+}

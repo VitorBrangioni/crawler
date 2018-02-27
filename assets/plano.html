@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js ie lt-ie10 lt-ie9 lt-ie8 lt-ie7 "> <![endif]-->
+<!--[if IE 7]>         <html class="no-js ie lt-ie10 lt-ie9 lt-ie8 "> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie lt-ie10 lt-ie9 "> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie lt-ie10 "> <![endif]-->
+<!--[if IE 10]>         <html class="no-js ie ie10 "> <![endif]-->
+<!--[if IE 11]>         <html class="no-js ie ie11 "> <![endif]-->
+<!--[if !IE]><!-->
+<html class="no-js ">
+<!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Plano Básico 5GB</title>
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="main.css?v17.12.04">
+
+	<link rel="stylesheet" href="checkout.css?v.17.09.18">
+</head>
+
+<body class="checkout">
+	<div class="siteContainer">
+		<header>
+			<div class="mainNavbar" role="navigation">
+				<div class="container">
+					<div class="row">
+						<span class="col-md-3 col-sm-3 col-xs-12 h1">
+							<a href="/">Plano de Celular</a>
+						</span>
+						<h2 class="col-md-4 col-sm-3 col-xs-6 notMobile h2">Contratar um Plano</h2>
+						<div class="col-md-5 col-sm-6 col-xs-12 right notMobile">
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="hidden-sm hidden-md hidden-lg hidden-xl stepInfoMobile">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-10">
+						<div>
+							<small>Plano selecionado</small>
+						</div>
+						<strong>Básico
+							<strong>+</strong>
+							<br/> 5GB + 5GB = 10GB
+							<small class="priceDescription">Bônus de internet exclusivo para clientes do Cartão de Crédito XXXX Seguro que pagarem com fatura por e-mail</small>
+							R$ 129,90</strong>
+						<span>por mês</span>
+						<div>
+							<small id="promoCodNotFilled">
+								<a href="#" open-modal="#codigoPromocionalModal">Cupom de desconto</a>
+							</small>
+
+							<small id="promoCodFilled" style="display:none;">
+								Cupom de desconto:
+								<strong id="cupomDesc"></strong>
+								<a href="#" open-modal="#codigoPromocionalModal">
+									editar
+								</a>
+							</small>
+						</div>
+					</div>
+					<div class="col-xs-2 colBtnMobile">
+						<a href="#" id="toggleDetailMobile" class="btn" toggle-button="#stepDetailMobile">
+							<span class="caret"></span>
+						</a>
+					</div>
+				</div>
+				<div id="stepDetailMobile" class="row stepInfoMobileOpen">
+					<div class="col-xs-12">
+						<strong class="h4">Detalhes do plano</strong>
+						<ul>
+							<li>
+								<strong>Fale 100 min</strong> com
+								<strong>qualquer operadora</strong> em ligações locais e DDD</li>
+							<li>SMS ilimitado</li>
+							<li>Roaming nacional</li>
+							<li>5GB de internet</li>
+						</ul>
+						<strong class="h4">Benefícios</strong>
+						<ul>
+							<li>Seguro de Celular</li>
+							<li>Celular Reserva</li>
+							<li>Motoboy</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<form name="contractForm" action="../passo2/?plano=basico-plus-5gb" method="post" role="form" id="contractFormStep" class="validateContractFormStep"
+		 onsubmit="return ValidateContractFormStep(this, '.step1');" accept-charset="UTF-8">
+			<input type="hidden" name="utf8" value="✓">
+			<input type="hidden" id="step" id="step" value=".step1">
+
+			<section class="step1">
+				<div class="container">
+
+					<div class="row stepHeader">
+						<div class="col-md-3 col-sm-3 notMobile">
+
+						</div>
+
+						<div class="col-md-9 col-sm-9 steps hidden-xs">
+							<ul>
+								<li style="width: 25%" class='selected'>
+									<span></span>
+									Portabilidade
+								</li>
+
+								<li style="width: 25%">
+									<span></span>
+									Dados pessoais
+								</li>
+
+								<li style="width: 25%">
+									<span></span>
+									Pagamento
+								</li>
+
+								<li style="width: 25%">
+									<span></span>
+									Confirmação
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-9 col-sm-9 col-xs-12 steps hidden-sm hidden-md hidden-lg">
+							<ul>
+								<li style="width: 25%" class='selected'>
+									<span></span>
+								</li>
+
+								<li style="width: 25%">
+									<span></span>
+								</li>
+
+								<li style="width: 25%">
+									<span></span>
+								</li>
+
+								<li style="width: 25%">
+									<span></span>
+								</li>
+							</ul>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+
+					<div class="row stepContent">
+						<div class="col-md-9 col-sm-8 stepForm">
+							<div class="alert alert-danger alert-general" style="display: none;">
+								Preencha todos os campos abaixo.
+							</div>
+							<div class="form-group noBg">
+								<h3 class="h3">Novo número ou portabilidade?</h3>
+								<div class="row col-md-12 noPadding">
+									<div class="col-md-6">
+										<input type="radio" name="portabilidade" value="não" class="radio iptRadioBtn valid initCheckout validate-portabilidade"
+										 id="contractForm_rad_portabilidade_02" show="#portabilidade_2,#frm-det,#frm-submit" data-analyticscustomdata="tipoContratacao::novo"
+										/>
+										<label class="radio lblRadioBtn" for="contractForm_rad_portabilidade_02">Desejo um novo número</label>
+									</div>
+									<div class="col-md-6">
+										<input type="radio" name="portabilidade" value="sim" class="radio iptRadioBtn valid initCheckout validate-portabilidade"
+										 id="contractForm_rad_portabilidade_01" show="#portabilidade_1,#frm-det,#frm-submit" data-analyticscustomdata="tipoContratacao::portabilidade"
+										/>
+										<label class="radio lblRadioBtn" for="contractForm_rad_portabilidade_01">Desejo fazer a portabilidade</label>
+									</div>
+									<div class="row-nested col-md-12 subRow" id="portabilidade_2" style="display: none;">
+										<div class="col-md-7 col-sm-12">
+											<label>Selecione o DDD</label>
+											<div class="hidden-xs">
+												<input type="radio" name="novo-numero-ddd" value="11" class="radio valid validate-novoNumero" id="contractForm_rad_novoNumero_11"
+												 checked data-uf="SP" data-analyticscustomdata="ddd::11" />
+												<label class="radio" for="contractForm_rad_novoNumero_11" style="margin-right: 20px;">11</label>
+												<input type="radio" name="novo-numero-ddd" value="12" class="radio valid validate-novoNumero" id="contractForm_rad_novoNumero_12"
+												 data-uf="SP" data-analyticscustomdata="ddd::12" />
+												<label class="radio" for="contractForm_rad_novoNumero_12" style="margin-right: 20px;">12</label>
+												<input type="radio" name="novo-numero-ddd" value="13" class="radio valid validate-novoNumero" id="contractForm_rad_novoNumero_13"
+												 data-uf="SP" data-analyticscustomdata="ddd::13" />
+												<label class="radio" for="contractForm_rad_novoNumero_13" style="margin-right: 20px;">13</label>
+												<input type="radio" name="novo-numero-ddd" value="19" class="radio valid validate-novoNumero" id="contractForm_rad_novoNumero_19"
+												 data-uf="SP" data-analyticscustomdata="ddd::19" />
+												<label class="radio" for="contractForm_rad_novoNumero_19" style="margin-right: 20px;">19</label>
+												<input type="radio" name="novo-numero-ddd" value="21" class="radio valid validate-novoNumero" id="contractForm_rad_novoNumero_21"
+												 data-uf="RJ" data-analyticscustomdata="ddd::21" />
+												<label class="radio" for="contractForm_rad_novoNumero_21" style="margin-right: 20px;">21</label>
+											</div>
+											<div class="visible-xs">
+												<div class="selectBox">
+													<select name="" selectsetvalue="true">
+														<option setvalue="input[name='novo-numero-ddd'][value='11']">11</option>
+														<option setvalue="input[name='novo-numero-ddd'][value='12']">12</option>
+														<option setvalue="input[name='novo-numero-ddd'][value='13']">13</option>
+														<option setvalue="input[name='novo-numero-ddd'][value='19']">19</option>
+														<option setvalue="input[name='novo-numero-ddd'][value='21']">21</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-5 col-sm-12">
+											<div class="sim-help-block">
+												Não precisa se preocupar! O nosso chip é compatível com todos os modelos de celular
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="row-nested col-md-12 subRow" id="portabilidade_1" style="display: none;">
+										<div class="col-md-4 col-sm-6 mobFakeSpacing">
+											<label>Número</label>
+											<input type="hidden" name="portabilidade-numero" id="portabilityNumber" value="" class="validate-portabilidadeNumero" />
+											<div class="col-xs-5" style="padding: 0">
+												<div class="selectBox">
+													<select name="control_portabilidade_ddd" class="form-control valid valueConcat validate-portabilidadeNumero" id="control_portabilidade_ddd"
+													 data-concat="#portabilityNumber;this;#control_portabilidade_num" data-analyticscustomdata="ddd">
+														<option value="" selected>DDD</option>
+														<option value="(11) " data-uf="SP">11</option>
+														<option value="(12) " data-uf="SP">12</option>
+														<option value="(13) " data-uf="SP">13</option>
+														<option value="(19) " data-uf="SP">19</option>
+														<option value="(21) " data-uf="RJ">21</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-xs-7" style="padding: 0">
+												<input type="tel" name="control_portabilidade_num" class="form-control valid maskPhoneNum valueConcat validate-portabilidadeNumero"
+												 id="control_portabilidade_num" data-concat="#portabilityNumber;#control_portabilidade_ddd;this" placeholder="9.9999.9999"
+												 value="" />
+											</div>
+											<br/>
+											<div class="clearfix"></div>
+										</div>
+										<div class="col-md-4 col-sm-6">
+											<div class="help-block">
+												Atenção: Você receberá um número temporário. No momento da ativação você irá agendar o dia e horário em que será realizada
+												a portabilidade, garantindo assim que não fique sem falar!
+											</div>
+										</div>
+										<div class="col-md-4 col-sm-12">
+											<div class="sim-help-block">
+												Não precisa se preocupar! O nosso chip é compatível com todos os modelos de celular
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="form-group submitRow" id="frm-submit" style="display: none;">
+								<div class="col-md-offset-8 col-md-4 col-sm-6 col-sm-offset-6">
+									<input type="submit" class="btn btn-primary btn-lg" value="Próximo passo »" />
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-4 notMobile">
+							<div class="stepInfo">
+								<h3 class="h3">Você está contratando</h3>
+								<div>
+									<small>Plano</small>
+									<strong>Básico
+										<strong>+</strong>
+										<br/> 5GB + 5GB = 10GB
+										<small class="priceDescription">Bônus de internet exclusivo para clientes do Cartão de Crédito XXXXX que pagarem com fatura por e-mail</small>
+									</strong>
+									<input type="hidden" name="plano" value="Básico+ 5GB" data-analyticscustomdata="plano" />
+									<input type="hidden" name="plano-valor" id="planPrice" value="129.90" />
+
+									<small>Por</small>
+									<strong class="fullPrice">R$ 129,90</strong>
+									<span>por mês</span>
+
+									<ul>
+										<li>
+											<strong>Fale 100 min</strong> com
+											<strong>qualquer operadora</strong> em ligações locais e DDD</li>
+										<li>SMS ilimitado</li>
+										<li>Roaming nacional</li>
+										<li>5GB de internet</li>
+									</ul>
+									<strong class="h4">Benefícios</strong>
+									<ul>
+										<li>Seguro de Celular</li>
+										<li>Celular Reserva</li>
+										<li>Motoboy</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</section>
+
+			<input type="hidden" name="bonus-internet" value="true" />
+
+			<input type="hidden" name="origem" value="Portal" />
+			<input type="hidden" name="gad_id" value="20171205194756" />
+
+			<input type="hidden" name="browser" value="Google Chrome 62.0.3202.94">
+			<input type="hidden" name="os" value="Mac">
+
+
+		</form>
+		<div class="clearfix">&#160;</div>
+		<footer>
+			<div class="colophon">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 disclaimer">
+							<small>Formas de pagamento da fatura: débito automático no Cartão de Crédito XXXXXX, débito em conta dos bancos conveniados
+								(Bradesco, Itaú e Santander) e boleto pagável nos bancos conveniados (Banco do Brasil, Bradesco, Santander e Itaú).
+								<br/>
+								<br/>Ofertas válidas até o término do mês de janeiro de 2018 ou até o final do estoque.</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+</body>
+
+</html>
