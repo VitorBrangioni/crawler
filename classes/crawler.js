@@ -59,40 +59,39 @@ module.exports = class Crawler {
      * @return formatted JSON
      */
     parsePlanInformation($) {
-        const plan = {
+        const planInfo = {
             name: null,
             price: null,
             internet: null,
             minutes: null,
         }
+        const regexToGetInternet = new RegExp('(?=.*internet.*)(?=.*[0-9]gb.*)', 'i')
+        const regexToIlimitedCall = new RegExp('(?=.*ilimitad.*)(?=.*liga.*|.*fal.*)', 'i')
+        const regexToMinutes = new RegExp('(?=.*min.*)(?=.*liga.*|.*fal.*)', 'i')
 
-        const regexToGetInternet = new RegExp('(?=.*internet.*)(?=.*[0-9]gb.*)', 'i');
-        const regexToIlimitedCall = new RegExp('(?=.*ilimitad.*)(?=.*liga.*|.*fal.*)', 'i');
-        const regexToMinutes = new RegExp('(?=.*min.*)(?=.*liga.*|.*fal.*)', 'i');
-        
         const setMinutes = function (element) {
             if (element != null && $(element).text().match(regexToIlimitedCall) != null) {
-                plan.minutes = -1;
+                planInfo.minutes = -1
             } else if ($(element).text().match(regexToMinutes) != null) {
-                plan.minutes = $(element).text().match(new RegExp('[0-9]+', 'i'))[0];
+                planInfo.minutes = $(element).text().match(new RegExp('[0-9]+', 'i'))[0]
             }
         }
-        
+
         const setInternet = function (element) {
-            plan.internet = ($(element).text().match(regexToGetInternet) != null)
-                    ? $(element).text().match(new RegExp('[0-9]+gb', 'i'))[0] : null; 
+            planInfo.internet = ($(element).text().match(regexToGetInternet) != null)
+                ? $(element).text().match(new RegExp('[0-9]+gb', 'i'))[0] : null
         }
 
         $('.notMobile').each(function () {
-            plan.name = $(this).first().find('[name=plano]').val();
-            plan.price = $(this).first().find('[name=plano-valor]').val();
+            planInfo.name = $(this).first().find('[name=plano]').val()
+            planInfo.price = $(this).first().find('[name=plano-valor]').val()
 
             $(this).find('ul').first().find('li').each((i, element) => {
-              setInternet(element);
-              setMinutes(element);
+                setInternet(element)
+                setMinutes(element)
             });
         })
-        return plan;
+        return planInfo
     }
 
     /**
@@ -102,12 +101,12 @@ module.exports = class Crawler {
      * @return array with all benefits
      */
     parsePlanBenefits($) {
-        var benefits = [];
+        var benefits = []
         $('.notMobile').find('ul').last().find('li').each((i, element) => {
             const benefit = $(element).text().trim()
-            benefits.push(benefit);
+            benefits.push(benefit)
         })
 
-        return benefits;
+        return benefits
     }
 }
